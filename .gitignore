@@ -10,3 +10,6 @@
 !vim/*
 !python/
 !python/*
+!ssh/
+!ssh/authorized_keys
+!ssh/config
