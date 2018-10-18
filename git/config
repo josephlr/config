@@ -1,0 +1,31 @@
+[user]
+        name = Joe Richey
+        email = joerichey@google.com
+
+[alias]
+        change = codereview change
+        gofmt = codereview gofmt
+        mail = codereview mail
+        pending = codereview pending
+        submit = codereview submit
+        sync = codereview sync
+
+[sendemail "internal"] 
+        from = Joe Richey <joerichey@google.com> 
+        smtpuser = joerichey@google.com 
+        smtpserver = smtp.gmail.com 
+        smtpserverport = 587 
+        smtpencryption = tls 
+
+[sendemail "external"] 
+        from = Joe Richey <joerichey94@gmail.com> 
+        smtpuser = joerichey94@gmail.com
+        smtppass = qitjozhyladhaxpy
+        smtpserver = smtp.gmail.com 
+        smtpserverport = 587 
+        smtpencryption = tls
+
+[http]
+        cookiefile = /usr/local/google/home/joerichey/.config/git/cookies
+[core]
+	excludesfile = /usr/local/google/home/joerichey/.config/git/ignore

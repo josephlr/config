@@ -1,0 +1,106 @@
+## Locale
+export LANG=en_US.UTF-8
+export LC_COLLATE=C
+
+## Other bin directories
+path+=(/snap/bin)
+export BIN=$HOME/.local/bin
+mkdir -p $BIN
+path+=($BIN)
+
+## Editor support (vim)
+export EDITOR=vim
+
+## Golang
+export GOPATH=$HOME/dev/go
+export GOBIN=$BIN
+
+## Decrease key input delay to 10ms
+export KEYTIMEOUT=1
+
+## XDG support
+## https://wiki.archlinux.org/index.php/XDG_Base_Directory_support
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+mkdir -p $XDG_CONFIG_HOME $XDG_CACHE_HOME $XDG_DATA_HOME
+
+# AWS
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+mkdir -p $XDG_CACHE_HOME/aws
+
+# ccache
+export CCACHE_DIR="$XDG_CACHE_HOME"/ccache
+mkdir -p $CCACHE_DIR
+
+# Docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
+# Fuchsia
+path+=($HOME/dev/fuchsia/.jiri_root/bin)
+
+# GnuPG (you may need to move in .gnupg)
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+rmdir -p .gnupg/private-keys-v1.d &> /dev/null || true
+
+# GTK
+export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+# Less
+export LESSHISTFILE=$XDG_CACHE_HOME/less/history
+export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
+mkdir -p $XDG_CACHE_HOME/less
+
+# Postgres
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+mkdir -p $XDG_CONFIG_HOME/pg $XDG_CACHE_HOME/pg
+
+# Python
+export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/startup.py
+mkdir -p $XDG_CONFIG_HOME/python
+export PYLINTHOME="$XDG_CACHE_HOME"/pylint
+
+# iPython
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter 
+
+# Ruby
+export IRBRC=$XDG_CONFIG_HOME/irb/irbrc
+export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle
+export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
+export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundle
+export GEM_HOME=$XDG_DATA_HOME/gem
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
+mkdir -p $XDG_CONFIG_HOME/{irb,bundle}
+
+# Rust
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+path+=($CARGO_HOME/bin)
+
+# Tmux
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+mkdir -p $XDG_CONFIG_HOME/tmux
+touch $XDG_CONFIG_HOME/tmux/tmux.conf
+export TMUX_TMPDIR=$XDG_CACHE_HOME/tmux 
+mkdir -p $TMUX_TMPDIR
+
+# Vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+mkdir -p $XDG_CONFIG_HOME/vim $XDG_CACHE_HOME/vim/{undo,swap,backup}
+
+# Wget
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts > "$WGETRC"
+
+# Zsh and Oh My Zsh
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
+export HISTFILE=$ZSH_CACHE_DIR/history
+export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
+mkdir -p $ZDOTDIR $ZSH_CACHE_DIR

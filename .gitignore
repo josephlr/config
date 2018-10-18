@@ -1,0 +1,12 @@
+*
+!.gitignore
+!zsh/
+!zsh/zshrc
+!zsh/zshenv
+!git/
+!git/ignore
+!git/config
+!vim/
+!vim/*
+!python/
+!python/*

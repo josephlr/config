@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/etc/pam.d'
+let g:netrw_dirhist_2='/etc/security'
+let g:netrw_dirhist_3='/home/joe/dev/rust/rak'
+let g:netrw_dirhist_4='/home/joe/.config/python'
