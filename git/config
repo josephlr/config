@@ -26,6 +26,11 @@
         smtpencryption = tls
 
 [http]
-        cookiefile = /usr/local/google/home/joerichey/.config/git/cookies
+	cookiefile = /home/joe/.config/git/cookies
 [core]
-	excludesfile = /usr/local/google/home/joerichey/.config/git/ignore
+	excludesfile = /home/joe/.config/git/ignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

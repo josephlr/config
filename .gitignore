@@ -3,11 +3,13 @@
 !zsh/
 !zsh/zshrc
 !zsh/zshenv
+!zsh/.zshrc
+!zsh/.zshenv
 !git/
 !git/ignore
 !git/config
 !vim/
-!vim/*
+!vim/vimrc
 !python/
 !python/*
 !ssh/

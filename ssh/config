@@ -1,25 +1,20 @@
 # *.home uses port forwarding to disabiguate.
-Host router.home
-    Port 22
 Host pride.home
-    Port 22000
+    Port 22
 Host lust.home
     Port 22001
+Host wrath.home
+    Port 22002
 Host *.home
     Hostname home.joerichey.com
-Host *.home *.local    
     User joe
 Host *
     IdentityFile ~/.ssh/id_ed25519
 
 # Get to the access point by proxing through the router.
-# Host ap.home ap.home.local
-#     User admin
-#     Hostname ap.home.local
 # Host ap.home
+#     User admin
 #     ProxyCommand ssh -o 'ForwardAgent yes' router.home -q 'ssh-add /config/keys/id_rsa && nc %h %p'
-# Host ap.home.local
-#     ProxyCommand ssh -o 'ForwardAgent yes' router.home.local -q 'ssh-add /config/keys/id_rsa && nc %h %p'
 
 # Always use SSH2.
 Host *
