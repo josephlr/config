@@ -38,7 +38,7 @@ alias steam="$HOME/.local/bin/steam"
 
 alias mv="mv -iv"
 alias cp="cp -iv"
-alias szsh="sudo su"
+alias szsh="ZSH_DISABLE_COMPFIX=true sudo --preserve-env zsh"
 alias quit="exit"
 
 alias gt="glog"
