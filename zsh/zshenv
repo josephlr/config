@@ -37,6 +37,9 @@ mkdir -p $CCACHE_DIR
 # Docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
+# elan/lean
+path+=($HOME/.elan/bin)
+
 # Fuchsia
 path+=($HOME/dev/fuchsia/.jiri_root/bin)
 
