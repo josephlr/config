@@ -43,6 +43,7 @@ path+=($HOME/dev/fuchsia/.jiri_root/bin)
 # GnuPG (you may need to move in .gnupg)
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 rmdir -p .gnupg/private-keys-v1.d &> /dev/null || true
+export GPG_TTY=$(tty)
 
 # GTK
 export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc

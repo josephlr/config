@@ -1,6 +1,7 @@
 [user]
         name = Joe Richey
         email = joerichey@google.com
+	signingkey = 1DD6D05AA306C53F
 
 [alias]
         change = codereview change

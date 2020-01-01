@@ -42,6 +42,7 @@ alias szsh="ZSH_DISABLE_COMPFIX=true sudo --preserve-env zsh"
 alias quit="exit"
 
 alias gt="glog"
+alias gfa="git fetch --all --no-tags --prune"
 alias gta="glog --all"
 alias gth="glog HEAD"
 alias gpk="git push fork"
